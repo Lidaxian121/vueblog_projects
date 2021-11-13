@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lidaxian.mapper.BlogMapper">
+
+    <select id="queryBlogById" parameterType="int" resultType="Blog">
+        select * from vueblog.blog where id = #{id}
+    </select>
+    <insert id="insertBlog" parameterType="Blog">
+        insert into vueblog.blog (title, description, content) VALUES (#{title},#{description},#{content})
+    </insert>
+    <delete id="deleteBlogById" parameterType="int">
+        delete from vueblog.blog where id = #{id}
+    </delete>
+</mapper>
